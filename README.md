@@ -1,6 +1,8 @@
 # School of Informed Risk
 
-Сайт-визитка программы «Университет длинной дистанции» для абитуриентов, студентов и партнёров.
+Сайт-визитка программы «Университет длинной дистанции».
+
+**GitHub Pages:** https://davidtsymbalov178-crypto.github.io/Order-1/
 
 ## Локально
 
@@ -9,41 +11,16 @@ npm install
 npm run dev
 ```
 
-Продакшен-сборка:
+Сборка под GitHub Pages:
 
 ```bash
-npm run build
-npm run preview
+npm run build:pages
 ```
 
-Готовые файлы для хостинга — в папке `dist/`.
+## GitHub Pages
 
-## Деплой
+1. В репозитории: **Settings → Pages → Build and deployment → Source: GitHub Actions**
+2. После merge в `main` workflow `.github/workflows/deploy-pages.yml` сам соберёт и опубликует сайт
+3. Либо вручную: Actions → **Deploy to GitHub Pages** → Run workflow
 
-### Netlify
-1. Подключите репозиторий или загрузите `dist/`
-2. Build command: `npm run build`
-3. Publish directory: `dist`
-4. Конфиг уже в `netlify.toml`
-
-### Vercel
-1. Import project
-2. Framework preset: Vite (или используйте `vercel.json`)
-3. Output: `dist`
-
-### GitHub Pages / любой static host
-1. `npm run build`
-2. Залейте содержимое `dist/` в корень сайта или в `docs/`
-3. `base: "./"` уже настроен — относительные пути работают и в подпапке
-
-### Docker (опционально)
-```bash
-npm run build
-npx --yes serve dist -l 4173
-```
-
-## Структура
-
-- `index.html` — лендинг
-- `styles.css`, `main.js` — стили и анимации
-- `public/` — favicon, manifest, robots, redirects
+Сайт открывается по адресу: `https://davidtsymbalov178-crypto.github.io/Order-1/`

@@ -1,8 +1,12 @@
 import { defineConfig } from "vite";
 
+// GitHub Pages project site: https://davidtsymbalov178-crypto.github.io/Order-1/
+const repoBase = "/Order-1/";
+const isGitHubPages =
+  process.env.GITHUB_PAGES === "true" || process.env.GITHUB_ACTIONS === "true";
+
 export default defineConfig({
-  // Relative base so the build works on Netlify, Vercel, GitHub Pages subpaths, and plain static hosts.
-  base: "./",
+  base: isGitHubPages ? repoBase : "./",
   server: {
     host: true,
     port: 5173,
